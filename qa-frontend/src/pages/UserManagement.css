@@ -1,0 +1,115 @@
+/* UserManagement.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    max-width: 400px;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  input:focus {
+    border-color: #4a90e2;
+    outline: none;
+  }
+  
+  button {
+    background-color: #4a90e2;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #357ABD;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+  }
+  
+  li {
+    background: white;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  }
+  
+  li button {
+    margin-left: 8px;
+    background-color: #e74c3c;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+  }
+  
+  li button:hover {
+    background-color: #c0392b;
+  }
+  
+  div[data-cy="error-name"],
+  div[data-cy="error-email"],
+  div[data-cy="error-api"] {
+    color: #e74c3c;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .user-form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+  }
+  
+  .user-form button:hover {
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .user-list li:hover {
+    background-color: #e9f5ff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  h2 {
+    text-align: center;
+  }
+  .user-management-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
