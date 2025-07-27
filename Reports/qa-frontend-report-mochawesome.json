@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-27T21:31:21.795Z",
+    "end": "2025-07-27T21:31:32.610Z",
+    "duration": 10815,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "97637dab-7687-4def-85cd-65b656cf98bc",
+      "title": "",
+      "fullFile": "cypress\\e2e\\UserManagement.cy.js",
+      "file": "cypress\\e2e\\UserManagement.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "767ed9fe-acb1-4478-bd4f-ac2fe9ef7ca1",
+          "title": "User Management UI",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list users",
+              "fullTitle": "User Management UI should list users",
+              "timedOut": null,
+              "duration": 1450,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-cy=\"user-row\"]').should('exist');\ncy.get('[data-cy=\"user-row\"]').its('length').should('be.gte', 1);",
+              "err": {},
+              "uuid": "2a426673-d341-4dbb-bf02-53cabaa89f6a",
+              "parentUUID": "767ed9fe-acb1-4478-bd4f-ac2fe9ef7ca1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should create a new user",
+              "fullTitle": "User Management UI should create a new user",
+              "timedOut": null,
+              "duration": 1712,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const name = 'New User';\nconst email = 'newuser@example.com';\ncy.get('[data-cy=\"user-form-name\"]').clear().type(name);\ncy.get('[data-cy=\"user-form-email\"]').clear().type(email);\ncy.intercept('POST', '**/users').as('createUser');\ncy.get('[data-cy=\"user-form-submit\"]').click();\ncy.wait('@createUser');\ncy.get('[data-cy=\"user-row\"]').last().should('contain', name).and('contain', email);",
+              "err": {},
+              "uuid": "62b4eca5-ebbd-45f0-9d4e-a4023a9489eb",
+              "parentUUID": "767ed9fe-acb1-4478-bd4f-ac2fe9ef7ca1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should update a user",
+              "fullTitle": "User Management UI should update a user",
+              "timedOut": null,
+              "duration": 1477,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const originalName = 'Test User';\nconst updatedName = 'Updated Name Modified';\ncy.get('[data-cy=\"user-row\"]').contains(originalName).closest('[data-cy=\"user-row\"]').within(() => {\n  cy.get('[data-cy=\"edit-button\"]').click();\n});\ncy.get('[data-cy=\"user-form-name\"]').clear().type(updatedName);\ncy.intercept('PUT', '**/users/*').as('updateUser');\ncy.get('[data-cy=\"user-form-submit\"]').click();\ncy.wait('@updateUser');\ncy.get('[data-cy=\"user-row\"]').should('contain', updatedName);\ncy.get('[data-cy=\"user-row\"]').should('not.contain', originalName);",
+              "err": {},
+              "uuid": "c96fcdd5-0907-4bb9-8306-59f75b6c37e1",
+              "parentUUID": "767ed9fe-acb1-4478-bd4f-ac2fe9ef7ca1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should delete a user",
+              "fullTitle": "User Management UI should delete a user",
+              "timedOut": null,
+              "duration": 1015,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const userToDelete = 'Delete Test User';\nconst emailToDelete = 'deleteuser@example.com';\n// Önce kendine özel bir kullanıcı oluştur\ncy.request('POST', 'http://localhost:3001/users', {\n  name: userToDelete,\n  email: emailToDelete\n});\n// Sayfayı yenile ve kullanıcıyı bekle\ncy.intercept('GET', '**/users').as('getUsers');\ncy.visit('http://localhost:3000/users');\ncy.wait('@getUsers');\n// Silme işlemini yap\ncy.intercept('DELETE', '**/users/*').as('deleteUser');\ncy.intercept('GET', '**/users').as('getUsersAfterDelete');\ncy.get('[data-cy=\"user-row\"]').contains(userToDelete).closest('[data-cy=\"user-row\"]').within(() => {\n  cy.get('[data-cy=\"delete-button\"]').click();\n});\ncy.wait('@deleteUser');\ncy.wait('@getUsersAfterDelete');\ncy.get('[data-cy=\"user-row\"]').should('not.contain', userToDelete);",
+              "err": {},
+              "uuid": "aef6ca4b-48fb-49d3-9ea1-3272f0f6441e",
+              "parentUUID": "767ed9fe-acb1-4478-bd4f-ac2fe9ef7ca1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error when trying to create user with invalid email",
+              "fullTitle": "User Management UI should show error when trying to create user with invalid email",
+              "timedOut": null,
+              "duration": 1719,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-cy=\"user-form-name\"]').clear().type('Invalid Email User');\ncy.get('[data-cy=\"user-form-email\"]').clear().type('not-an-email');\ncy.get('[data-cy=\"user-form-submit\"]').click();\ncy.get('[data-cy=\"error-email\"]').should('be.visible').and('contain', 'Invalid email address');",
+              "err": {},
+              "uuid": "18fdd890-524d-44cf-af87-c6a26d36c5d6",
+              "parentUUID": "767ed9fe-acb1-4478-bd4f-ac2fe9ef7ca1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should prevent creating user without name",
+              "fullTitle": "User Management UI should prevent creating user without name",
+              "timedOut": null,
+              "duration": 1485,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-cy=\"user-form-name\"]').clear();\ncy.get('[data-cy=\"user-form-email\"]').clear().type('noname@example.com');\ncy.get('[data-cy=\"user-form-submit\"]').click();\ncy.get('[data-cy=\"error-name\"]').should('be.visible').and('contain', 'Name is required');",
+              "err": {},
+              "uuid": "5c9477b0-57ac-43a7-8dc6-5f840aa6e0e9",
+              "parentUUID": "767ed9fe-acb1-4478-bd4f-ac2fe9ef7ca1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should prevent creating user with duplicate email",
+              "fullTitle": "User Management UI should prevent creating user with duplicate email",
+              "timedOut": null,
+              "duration": 1842,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const name = 'Duplicate Email User';\nconst email = 'testuser@example.com';\ncy.get('[data-cy=\"user-form-name\"]').clear().type(name);\ncy.get('[data-cy=\"user-form-email\"]').clear().type(email);\ncy.intercept('POST', '**/users').as('createUser');\ncy.get('[data-cy=\"user-form-submit\"]').click();\ncy.wait('@createUser');\ncy.get('[data-cy=\"error-api\"]').should('exist').and('contain', 'Email already exists');",
+              "err": {},
+              "uuid": "e41e9843-4673-47cc-a642-99ef450a8eaa",
+              "parentUUID": "767ed9fe-acb1-4478-bd4f-ac2fe9ef7ca1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2a426673-d341-4dbb-bf02-53cabaa89f6a",
+            "62b4eca5-ebbd-45f0-9d4e-a4023a9489eb",
+            "c96fcdd5-0907-4bb9-8306-59f75b6c37e1",
+            "aef6ca4b-48fb-49d3-9ea1-3272f0f6441e",
+            "18fdd890-524d-44cf-af87-c6a26d36c5d6",
+            "5c9477b0-57ac-43a7-8dc6-5f840aa6e0e9",
+            "e41e9843-4673-47cc-a642-99ef450a8eaa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10700,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

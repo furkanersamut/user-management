@@ -1,0 +1,317 @@
+{
+	"id": "5125f04e-160b-46ea-a0d2-c41aba12a4fd",
+	"name": "Mehmet_Furkan_Ersamut",
+	"timestamp": "2025-07-26T00:28:53.139Z",
+	"collection_id": "19124891-8bef7c29-468b-48e1-811a-07d930a66e59",
+	"folder_id": 0,
+	"environment_id": "19124891-37008a2a-a516-4bde-a822-739c45ee3506",
+	"totalPass": 20,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-07-26T00:28:52.277Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "d4317f33-916e-4891-86e9-e2d5a5b47943",
+			"name": "GET USER LIST",
+			"url": "http://localhost:3001/users",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status must be 200": true,
+				"Answer type must be JSON": true,
+				"User list not empty": true,
+				"Response time max limit 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status must be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Answer type must be JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User list not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time max limit 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status must be 200": true,
+					"Answer type must be JSON": true,
+					"User list not empty": true,
+					"Response time max limit 200ms": true
+				}
+			]
+		},
+		{
+			"id": "4476c547-1363-4b61-a11e-202de4484bd4",
+			"name": "ADD NEW USER",
+			"url": "http://localhost:3001/users",
+			"time": 2,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status must be 201": true,
+				"Answer body have to have id, name and email": true,
+				"Response time max limit 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status must be 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Answer body have to have id, name and email": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time max limit 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status must be 201": true,
+					"Answer body have to have id, name and email": true,
+					"Response time max limit 200ms": true
+				}
+			]
+		},
+		{
+			"id": "1e72fa3b-5e88-4320-aad0-96ee605eb4c7",
+			"name": "CHANGE NEW USER EMAIL WITH ID",
+			"url": "http://localhost:3001/users/1753489732653",
+			"time": 2,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status must be 200 or 204": true,
+				"Update Successfull message must be": true,
+				"Response time max limit 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status must be 200 or 204": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Update Successfull message must be": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time max limit 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status must be 200 or 204": true,
+					"Update Successfull message must be": true,
+					"Response time max limit 200ms": true
+				}
+			]
+		},
+		{
+			"id": "ed04dd2f-beb8-4fba-a27e-3b2f9b6e5353",
+			"name": "DELETE USER WİTH ID",
+			"url": "http://localhost:3001/users/1753489732653",
+			"time": 2,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code must be 200)": true,
+				"User deleted message must be": true,
+				"Response time max limit 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code must be 200)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User deleted message must be": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time max limit 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code must be 200)": true,
+					"User deleted message must be": true,
+					"Response time max limit 200ms": true
+				}
+			]
+		},
+		{
+			"id": "0a369397-5154-47ab-8ea8-49d40711f6cb",
+			"name": "NEGATIVE TEST WITHOUT EMAIL POST",
+			"url": "http://localhost:3001/users",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status must be 400": true,
+				"Body have to have fail message": true,
+				"Response time max limit 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status must be 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body have to have fail message": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time max limit 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status must be 400": true,
+					"Body have to have fail message": true,
+					"Response time max limit 200ms": true
+				}
+			]
+		},
+		{
+			"id": "b66f88eb-17b7-431b-948e-9c3568ce3c24",
+			"name": "NEGATIVE TEST NOT FOUND USER UPDATE",
+			"url": "http://localhost:3001/users/99887766",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status must be 404": true,
+				"Response time max limit 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status must be 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time max limit 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status must be 404": true,
+					"Response time max limit 200ms": true
+				}
+			]
+		},
+		{
+			"id": "b017bb67-cfba-4c1c-8567-a96e19adfd08",
+			"name": "NEGATIVE TEST NOT FOUND USER DELETE",
+			"url": "http://localhost:3001/users/99887766",
+			"time": 2,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status must be 404 ": true,
+				"Response time max limit 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status must be 404 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time max limit 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status must be 404 ": true,
+					"Response time max limit 200ms": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 16,
+	"collection": {
+		"requests": [
+			{
+				"id": "d4317f33-916e-4891-86e9-e2d5a5b47943",
+				"method": "GET"
+			},
+			{
+				"id": "4476c547-1363-4b61-a11e-202de4484bd4",
+				"method": "POST"
+			},
+			{
+				"id": "1e72fa3b-5e88-4320-aad0-96ee605eb4c7",
+				"method": "PUT"
+			},
+			{
+				"id": "ed04dd2f-beb8-4fba-a27e-3b2f9b6e5353",
+				"method": "DELETE"
+			},
+			{
+				"id": "0a369397-5154-47ab-8ea8-49d40711f6cb",
+				"method": "POST"
+			},
+			{
+				"id": "b66f88eb-17b7-431b-948e-9c3568ce3c24",
+				"method": "PUT"
+			},
+			{
+				"id": "b017bb67-cfba-4c1c-8567-a96e19adfd08",
+				"method": "DELETE"
+			}
+		]
+	}
+}

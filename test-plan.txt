@@ -1,0 +1,30 @@
+ Test Plan - User Management Project
+
+ Objective
+To verify the correctness and reliability of the user management application through automated API and UI testing.
+
+---
+
+Test Scenarios
+
+| Test ID | Test Name                     | Type    | Description                                             | Status |
+|--------|-------------------------------|---------|---------------------------------------------------------|--------|
+| TC001  | User Login                    | API/UI  | Verify user can login with valid credentials            | ✅ PASS |
+| TC002  | Create New User               | UI      | Verify user can be created from UI                     | ✅ PASS |
+| TC003  | Create New User               | API     | Verify user creation via API                           | ✅ PASS |
+| TC004  | Duplicate Email Validation    | UI/API  | Prevent creating users with existing email             | ✅ PASS |
+| TC005  | Required Fields Validation    | UI/API  | Ensure error shown when fields are missing             | ✅ PASS |
+| TC006  | Update Existing User          | UI/API  | Verify user update functionality                       | ✅ PASS |
+| TC007  | Delete User                   | UI/API  | Verify user can be deleted                             | ✅ PASS |
+| TC008  | Form Validation - Empty Name  | UI      | Prevent submitting form without a name                 | ✅ PASS |
+| TC009  | List All Users                | UI/API  | Verify users are listed correctly                      | ✅ PASS |
+| TC010  | Error Handling                | API/UI  | Proper error message shown when backend fails          | ✅ PASS |
+
+---
+
+## Notes
+
+- Cypress was used for UI tests.
+- Postman + Newman was used for API testing with scripting and validations.
+- Mochawesome reporter generates detailed test reports in HTML format.
+
