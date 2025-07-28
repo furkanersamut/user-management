@@ -4,11 +4,17 @@ This document explains how to install, configure, and run the automated tests de
 for the User Management project, which consists of:
 
 A Node.js + Express backend (API)
+
 A React frontend UI
+
 Automated API tests using Postman and Newman
+
 Automated UI tests using Cypress
+
 Reporting with Mochawesome
+
 Code written in JavaScript
+
 
 Technologies Used
 
