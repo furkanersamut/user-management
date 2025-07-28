@@ -16,7 +16,10 @@ Reporting with Mochawesome
 Code written in JavaScript
 
 
+
 Technologies Used
+
+
 
 Tool / Library - Purpose
 
@@ -38,7 +41,11 @@ JavaScript - Programming language used in all layers
 
 API Testing (qa-backend + postman-tests)
 
+
+
 Installation
+
+
 
 cd qa-backend
 
@@ -55,12 +62,15 @@ cd ../postman-tests
 newman run user-management.postman_collection.json -e
 env.postman_environment.json -r cli,html --reporter-html-export report.html
 
+
 This will:
 
 Run all API tests.
+
 Export a readable HTML report as report.html
 
 Frontend Testing (qa-frontend + Cypress)
+
 
 Installation
 
@@ -72,12 +82,17 @@ npm start
 
 Frontend will run at: http://localhost:3000
 
+
+
 Run UI Tests with Cypress
+
+
 Option 1: Cypress GUI
 
 npx cypress open
 
 Option 2: Headless mode with report
+
 
 npx cypress run --reporter mochawesome --reporter-options
 reportDir=cypress/reports,overwrite=false,html=true,json=true
@@ -85,22 +100,41 @@ reportDir=cypress/reports,overwrite=false,html=true,json=true
 This will:
 
 Run all tests automatically.
+
 Generate a detailed report in cypress/reports/
+
+
 Test Coverage & Reports
+
 
 UI Test Scenarios
 
+
+
 Login with valid/invalid credentials
+
 Create a new user
+
 Update an existing user
+
 Delete a user
+
 Prevent duplicate emails
+
 Validate required fields
+
 List users
+
 Handle API errors
+
 Form validation for empty fields
 
+
+
 API Test Scenarios
+
+
+
 POST /login
 
 GET /users
@@ -114,6 +148,7 @@ DELETE /users/:id
 Positive and negative cases for all endpoints
 
 Quick Start
+
 # Start Backend
 
 cd qa-backend
@@ -145,6 +180,7 @@ npx cypress run --reporter mochawesome --reporter-options
 reportDir=cypress/reports,html=true
 
 Notes
+
 
 The backend and frontend must both be running for Cypress tests to work correctly.
 Postman and Newman tests require user-management.postman_collection.json and
