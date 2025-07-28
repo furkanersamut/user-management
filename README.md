@@ -1,4 +1,4 @@
-Project Documentation – QA Automation Challenge
+# Project Documentation – QA Automation Challenge
 
 This document explains how to install, configure, and run the automated tests developed
 for the User Management project, which consists of:
@@ -17,7 +17,7 @@ Code written in JavaScript
 
 
 
-Technologies Used
+# Technologies Used
 
 
 
@@ -39,11 +39,11 @@ Mochawesome - HTML report generation for Cypress
 
 JavaScript - Programming language used in all layers
 
-API Testing (qa-backend + postman-tests)
+# API Testing (qa-backend + postman-tests)
 
 
 
-Installation
+# Installation
 
 
 
@@ -55,7 +55,7 @@ npm start
 
 Backend will run at:http://localhost:3001
 
-Run API Tests (with Newman)
+# Run API Tests (with Newman)
 
 cd ../postman-tests
 
@@ -72,7 +72,7 @@ Export a readable HTML report as report.html
 Frontend Testing (qa-frontend + Cypress)
 
 
-Installation
+# Installation
 
 cd ../qa-frontend
 
@@ -84,14 +84,14 @@ Frontend will run at: http://localhost:3000
 
 
 
-Run UI Tests with Cypress
+# Run UI Tests with Cypress
 
 
-Option 1: Cypress GUI
+# Option 1: Cypress GUI
 
 npx cypress open
 
-Option 2: Headless mode with report
+# Option 2: Headless mode with report
 
 
 npx cypress run --reporter mochawesome --reporter-options
@@ -104,10 +104,10 @@ Run all tests automatically.
 Generate a detailed report in cypress/reports/
 
 
-Test Coverage & Reports
+# Test Coverage & Reports
 
 
-UI Test Scenarios
+# UI Test Scenarios
 
 
 
@@ -131,7 +131,7 @@ Form validation for empty fields
 
 
 
-API Test Scenarios
+# API Test Scenarios
 
 
 
