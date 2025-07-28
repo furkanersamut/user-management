@@ -69,7 +69,7 @@ Run all API tests.
 
 Export a readable HTML report as report.html
 
-Frontend Testing (qa-frontend + Cypress)
+# Frontend Testing (qa-frontend + Cypress)
 
 
 # Installation
