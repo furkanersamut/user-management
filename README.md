@@ -9,6 +9,7 @@ Automated API tests using Postman and Newman
 Automated UI tests using Cypress
 Reporting with Mochawesome
 Code written in JavaScript
+
 Technologies Used
 
 Tool / Library - Purpose
@@ -39,7 +40,7 @@ npm install
 
 npm start
 
-Backend will run at: http://localhost:
+Backend will run at:http://localhost:3001
 
 Run API Tests (with Newman)
 
@@ -52,6 +53,7 @@ This will:
 
 Run all API tests.
 Export a readable HTML report as report.html
+
 Frontend Testing (qa-frontend + Cypress)
 
 Installation
@@ -62,7 +64,7 @@ npm install
 
 npm start
 
-Frontend will run at: http://localhost:
+Frontend will run at: http://localhost:3000
 
 Run UI Tests with Cypress
 Option 1: Cypress GUI
