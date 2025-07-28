@@ -93,14 +93,20 @@ Validate required fields
 List users
 Handle API errors
 Form validation for empty fields
-API Test Scenarios
 
+API Test Scenarios
 POST /login
+
 GET /users
+
 POST /users
+
 PUT /users/:id
+
 DELETE /users/:id
+
 Positive and negative cases for all endpoints
+
 Quick Start
 # Start Backend
 
